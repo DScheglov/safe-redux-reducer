@@ -3,7 +3,7 @@ import { combineReducers as reduxCombineReducers } from 'redux';
 
 export const safeReducer = reducer => (
   (state, action) => deepFreeze( 
-    reducer( deepFreeze(state), deepFreeze(action) )
+    reducer( state && deepFreeze(state), action && deepFreeze(action) )
   )
 );
 
