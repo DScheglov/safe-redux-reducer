@@ -10,6 +10,6 @@ export const safeReducer = reducer => (
 export const freeze = deepFreeze;
 export const combineReducers = reducers => reduxCombineReducers(
   Object.keys(reducers).reduce(
-    (r, b) => (r[b] = safeReducer(reducers[b]), r ), {}
+    (r, b) => (r[b] = safeReducer(reducers[b]), r), {}
   )
 );
